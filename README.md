@@ -1,6 +1,6 @@
 # Weather-App
 
-![User Journey Map Image](/weather-app/src/assets/MainImage.jpg)
+![User Journey Map Image](/weather-app/src/assets/WeatherAppCover.jpg)
 
 Welcome to the weather app. You can search by city in the input field and you will be able to see the current weather information. 
 
