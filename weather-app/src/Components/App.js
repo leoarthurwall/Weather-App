@@ -22,6 +22,7 @@ function App() {
     <div className="app">
       <div className="search">
         <input
+          className="input-original"
           value={location}
           type="text"
           onChange={(event) => setLocation(event.target.value)}
