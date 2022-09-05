@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import axios from "axios";
+import SearchBar from "./SearchBar";
 
 function App() {
   const [data, setData] = useState({});
@@ -28,6 +29,8 @@ function App() {
           placeholder="Enter Location..."
         />
       </div>
+      <SearchBar placeholder='enter a location...' data={url} />
+
 
       <div className="container">
         <div className="top">
