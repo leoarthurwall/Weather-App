@@ -8,19 +8,24 @@ import { cityData } from "./cities";
 function SearchBar({ placeholder, myData }) {
   const [citySearch, setCitySearch] = useState("");
 
+  const clearInput = () => {
+   setCitySearch("")
+  }
+
   return (
     <div className="search-component-container">
       <div className="search-input-container">
         <input
           className="search-input"
           type="text"
+          value={citySearch}
           placeholder={placeholder}
           onChange={(event) => {
             setCitySearch(event.target.value);
           }}
         />
         <div className="search-icon">
-          {citySearch.length === 0 ? <SearchIcon /> : <CloseIcon />}
+          {citySearch.length === 0 ? <SearchIcon /> : <CloseIcon className="close-icon" onClick={clearInput} />}
         </div>
       </div>
       <div className="data-result">
