@@ -22,19 +22,24 @@ function SearchBar({ placeholder, myData }) {
         </div>
       </div>
       <div className="data-result">
-        {cityData.filter((val) => {
-            if (citySearch === '') {
-                return null
-            } else if (val.city.toLowerCase().startsWith(citySearch.toLowerCase())) {
-                return val
+        {cityData
+          .filter((val) => {
+            if (citySearch === "") {
+              return null;
+            } else if (
+              val.city.toLowerCase().startsWith(citySearch.toLowerCase())
+            ) {
+              return val;
             }
-        }).slice(0, 10).map((item, key) => {
-          return (
-            <div className="data-result-city" key={key}>
-              <p className="city-text">{item.city}</p>
-            </div>
-          );
-        })}
+          })
+          .slice(0, 10)
+          .map((item, key) => {
+            return (
+              <div className="data-result-city" key={key}>
+                <p className="city-text">{item.city}</p>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
