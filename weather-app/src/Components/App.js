@@ -30,8 +30,7 @@ function App() {
           placeholder="Enter Location..."
         />
       </div>
-      <SearchBar placeholder='enter a location...' data={url} />
-
+      <SearchBar placeholder="Enter a location..." myData={url} />
 
       <div className="container">
         <div className="top">
@@ -50,7 +49,7 @@ function App() {
           </div>
         </div>
 
-              {/* bottom only renders when data.name is defined */}
+        {/* bottom only renders when data.name is defined */}
         {data.name !== undefined && (
           <div className="bottom">
             <div className="feels">
@@ -64,7 +63,9 @@ function App() {
               <p>Humidity</p>
             </div>
             <div className="wind">
-              {data.main ? <p className="bold">{data.wind.speed.toFixed()}mph</p> : null}
+              {data.main ? (
+                <p className="bold">{data.wind.speed.toFixed()}mph</p>
+              ) : null}
               <p>Wind Speed</p>
             </div>
           </div>

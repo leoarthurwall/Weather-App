@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt:wght@100;200;300;400;500;600;700&display=swap');
+
 .search-input-container {
     display: flex;
     justify-content: center;
@@ -12,7 +14,7 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
     border: 0;
 
 }
@@ -23,7 +25,7 @@
     height:auto;
     width: 80px;
     background-color: aquamarine;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 
@@ -31,4 +33,16 @@
 
 .search-input:focus {
     outline: none;
+}
+
+.data-result {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.city-text {
+    font-size: 1rem;
+    margin: 0.2rem;
+    color: black;
 }
