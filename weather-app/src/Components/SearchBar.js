@@ -3,7 +3,6 @@ import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 
-// import { cityData } from "./cities.js";
 import { cityData } from "./cityData.js";
 
 function SearchBar({ placeholder, myData }) {

@@ -31,7 +31,7 @@ function App() {
           placeholder="Enter Location..."
         />
       </div>
-      <SearchBar placeholder="Enter a location..." myData={url} />
+      <SearchBar placeholder="Enter a City..." myData={url} />
 
       <div className="container">
         <div className="top">
@@ -77,3 +77,13 @@ function App() {
 }
 
 export default App;
+
+
+/*
+PLAN - connect search bar to weather api and render on screen
+- click a city from bar & fetch data fro that city
+  - on click function that fetches data when city is clicked
+    - 
+- display city data on screen
+
+*/
