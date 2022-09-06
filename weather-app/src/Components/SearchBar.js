@@ -28,6 +28,7 @@ function SearchBar({ placeholder, myData }) {
           {citySearch.length === 0 ? <SearchIcon /> : <CloseIcon className="close-icon" onClick={clearInput} />}
         </div>
       </div>
+      { citySearch.length !== 0 &&
       <div className="data-result">
         {cityData
           .filter((val) => {
@@ -48,6 +49,7 @@ function SearchBar({ placeholder, myData }) {
             );
           })}
       </div>
+      }
     </div>
   );
 }
