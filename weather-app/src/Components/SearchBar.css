@@ -26,13 +26,17 @@
     border: 0;
 
 }
+
+.search-input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .search-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     height:auto;
     width: 80px;
-    background-color: aquamarine;
     background: rgba(255, 255, 255, 0.12);
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
