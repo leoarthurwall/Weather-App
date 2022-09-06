@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
+
 import { cityData } from "./cities";
 
 function SearchBar({ placeholder, myData }) {
@@ -18,7 +20,7 @@ function SearchBar({ placeholder, myData }) {
           }}
         />
         <div className="search-icon">
-          <SearchIcon />
+          {citySearch.length === 0 ? <SearchIcon /> : <CloseIcon />}
         </div>
       </div>
       <div className="data-result">
