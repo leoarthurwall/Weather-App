@@ -3,14 +3,15 @@ import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 
-import { cityData } from "./cities";
+// import { cityData } from "./cities.js";
+import { cityData } from "./cityData.js";
 
 function SearchBar({ placeholder, myData }) {
   const [citySearch, setCitySearch] = useState("");
 
   const clearInput = () => {
-   setCitySearch("")
-  }
+    setCitySearch("");
+  };
 
   return (
     <div className="search-component-container">
@@ -25,31 +26,35 @@ function SearchBar({ placeholder, myData }) {
           }}
         />
         <div className="search-icon">
-          {citySearch.length === 0 ? <SearchIcon /> : <CloseIcon className="close-icon" onClick={clearInput} />}
+          {citySearch.length === 0 ? (
+            <SearchIcon />
+          ) : (
+            <CloseIcon className="close-icon" onClick={clearInput} />
+          )}
         </div>
       </div>
-      { citySearch.length !== 0 &&
-      <div className="data-result">
-        {cityData
-          .filter((val) => {
-            if (citySearch === "") {
-              return null;
-            } else if (
-              val.city.toLowerCase().startsWith(citySearch.toLowerCase())
-            ) {
-              return val;
-            }
-          })
-          .slice(0, 10)
-          .map((item, key) => {
-            return (
-              <div className="data-result-city" key={key}>
-                <p className="city-text">{item.city}</p>
-              </div>
-            );
-          })}
-      </div>
-      }
+      {citySearch.length !== 0 && (
+        <div className="data-result">
+          {cityData
+            .filter((val) => {
+              if (citySearch === "") {
+                return null;
+              } else if (
+                val.name.toLowerCase().startsWith(citySearch.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .slice(0, 10)
+            .map((item, key) => {
+              return (
+                <div className="data-result-city" key={key}>
+                  <p className="city-text">{item.name}, {item.country}</p>
+                </div>
+              );
+            })}
+        </div>
+      )}
     </div>
   );
 }
