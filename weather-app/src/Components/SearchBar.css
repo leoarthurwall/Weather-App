@@ -3,7 +3,7 @@
 .search-input-container {
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 1.5rem;
     width: 300px;
 }
 
@@ -58,7 +58,7 @@
     box-shadow:  rgba(255, 255, 255, 0.4);
     border-radius: 25px;
     width: 300px;
-    height: 200px;
+    height: 150px;
     overflow: hidden;
     overflow-y: auto;
 }

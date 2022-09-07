@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="search">
+      {/* <div className="search">
         <input
           className="input-original"
           value={location}
@@ -30,7 +30,7 @@ function App() {
           onKeyPress={searchLocation}
           placeholder="Enter Location..."
         />
-      </div>
+      </div> */}
       <SearchBar placeholder="Enter a City..." />
 
       <div className="container">
