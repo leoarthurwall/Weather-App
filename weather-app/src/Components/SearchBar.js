@@ -2,15 +2,31 @@ import React, { useState } from "react";
 import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
-
+import axios from "axios";
 import { cityData } from "./cityData.js";
 
 function SearchBar({ placeholder, myData }) {
   const [citySearch, setCitySearch] = useState("");
+  const [data, setData] = useState({});
+
 
   const clearInput = () => {
     setCitySearch("");
   };
+
+  const handleCityClick = (searchData) => {
+    console.log("city clicked")
+    console.log(searchData.target.firstChild)
+    const citySearchName = searchData.target.firstChild;
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${citySearchName}&units=metric&appid=39d58dd0e66853d63d1cdefbad6c7a37`;
+    
+    axios.get(url).then((response) => {
+      setData(response.data);
+      console.log(response.data);
+    });
+  }
+
 
   return (
     <div className="search-component-container">
@@ -47,7 +63,7 @@ function SearchBar({ placeholder, myData }) {
             .slice(0, 10)
             .map((item, key) => {
               return (
-                <div className="data-result-city" key={key}>
+                <div className="data-result-city" key={key} onClick={handleCityClick}>
                   <p className="city-text">{item.name}, {item.country}</p>
                 </div>
               );
