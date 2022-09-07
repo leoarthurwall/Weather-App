@@ -31,7 +31,7 @@ function App() {
           placeholder="Enter Location..."
         />
       </div>
-      <SearchBar placeholder="Enter a City..." myData={url} />
+      <SearchBar placeholder="Enter a City..." />
 
       <div className="container">
         <div className="top">

@@ -6,21 +6,24 @@ import axios from "axios";
 import { cityData } from "./cityData.js";
 
 function SearchBar({ placeholder, myData }) {
-  const [citySearch, setCitySearch] = useState("");
   const [data, setData] = useState({});
+  const [citySearch, setCitySearch] = useState("");
 
 
   const clearInput = () => {
     setCitySearch("");
   };
 
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&units=metric&appid=39d58dd0e66853d63d1cdefbad6c7a37`;
+
   const handleCityClick = (searchData) => {
+
     console.log("city clicked")
     console.log(searchData.target.firstChild)
-    const citySearchName = searchData.target.firstChild;
+    console.log(searchData.target.firstChild.textContent)
+    setCitySearch(searchData.target.firstChild.textContent)
+    console.log(setCitySearch)
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${citySearchName}&units=metric&appid=39d58dd0e66853d63d1cdefbad6c7a37`;
-    
     axios.get(url).then((response) => {
       setData(response.data);
       console.log(response.data);
